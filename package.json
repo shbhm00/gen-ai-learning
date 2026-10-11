@@ -6,7 +6,7 @@
     "test": "tests"
   },
   "scripts": {
-    "dev": "tsx src/days/day-1/app.ts",
+    "dev": "tsx src/days/day-3/app.ts",
     "build": "tsc",
     "start": "node dist/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"

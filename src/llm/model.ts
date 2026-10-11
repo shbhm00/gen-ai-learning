@@ -1,3 +1,5 @@
+import "dotenv/config"; 
+
 import { ChatGoogle } from "@langchain/google";
 import { z } from "zod";
 

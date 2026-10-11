@@ -33,13 +33,37 @@ Keep explanations practical and concise.`,
       break;
     }
 
-    messages.push(new HumanMessage(question));
+      messages.push(new HumanMessage(question));
+      
+      /**
+       * streaming response from the model
+       */
 
-    const response = await model.invoke(messages);
+      let fullResponse = "";
 
-    console.log("\nCoach:", response.content);
+      process.stdout.write("\nCoach: ");
+      
+      const stream = await model.stream(messages); 
 
-    messages.push(new AIMessage(response.content.toString()));
+for await (const chunk of stream)  {
+  const content = chunk.content;
+
+  if (typeof content === "string") {
+    process.stdout.write(content);
+    fullResponse += content;
+  }
+}
+
+process.stdout.write("\n\n");
+
+messages.push(new AIMessage(fullResponse));
+
+
+    // const response = await model.invoke(messages);
+
+    // console.log("\nCoach:", response.content);
+
+    // messages.push(new AIMessage(response.content.toString()));
   }
 
   rl.close();

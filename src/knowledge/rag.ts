@@ -11,6 +11,7 @@ A typical RAG pipeline has three major stages:
 1. Retrieve relevant documents.
 2. Add the retrieved documents to the prompt.
 3. Ask the LLM to generate an answer using that context.
+4. Optionally, rerank the retrieved documents to improve the quality of the context.
 
 RAG is useful when an application needs to answer questions
 using private, domain-specific, or frequently changing information.

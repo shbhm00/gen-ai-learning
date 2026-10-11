@@ -10,6 +10,7 @@ export function retrieveContext(question: string): string {
     "rerank",
     "document",
     "llm",
+    "language model",
   ];
 
   const isRelevant = keywords.some((keyword) =>

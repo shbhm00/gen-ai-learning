@@ -11,8 +11,8 @@ const learningResponseSchema = z.object({
 });
 
 export const model = new ChatGoogle({
-  apiKey: "AQ.Ab8RN6JN8HR_enrt7NBNk2odqdd_LuFWhJlNAny-Vh_oJVFjVg",
-  model: "gemini-flash-latest",
+  apiKey: process.env.API_KEY,
+  model: process.env.MODEL,
   temperature: 0,
 });
 
